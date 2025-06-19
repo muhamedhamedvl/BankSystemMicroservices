@@ -34,6 +34,7 @@ namespace Microservices.API.Controllers
         public async Task<IActionResult> CreateRole([FromBody] Role role)
         {
             if (!ModelState.IsValid)
+
                 return BadRequest(ModelState);
 
             await _roleService.AddRoleAsync(role);
